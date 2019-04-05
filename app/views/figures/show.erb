@@ -1,24 +1,21 @@
-<table>
-  <th>Person Name</th>
-  <tr>
-      <td align="center"><a href="/figures/<%= @figure.id %>"><%= @figure.name %></a>
-      <ul>
-      Landmarks:
-        <%@figure.landmarks.each do |landmark|%>
-        <li><%=landmark.name%></li>
-        <%end%>
-      </ul>
-      <ul>
-      Titles:
-        <%@figure.titles.each do |title|%>
-        <li><%=title.name%></li>
-        <%end%>
-      </ul>
-  </tr>
-      </td>
-</table>
-<br>
+<h2>Person Name</h2>
 
-<a class="button" href="/figures/<%= @figure.id %>/edit">Edit</a>
-<a class="button" href="/figures">Figures</a>
+<a href="/figures/<%= @figure.id %>"><%= @figure.name %></a>
+
+<p>Landmarks:</p>
+<ul>
+  <%@figure.landmarks.each do |landmark|%>
+  <li><%=landmark.name%></li>
+  <%end%>
+</ul>
+
+<p>Titles:</p>
+<ul>
+  <%@figure.titles.each do |title|%>
+  <li><%=title.name%></li>
+  <%end%>
+</ul><br>
+
+<a class="button" href="/figures/<%= @figure.id %>/edit">Edit</a><br><br>
+<a class="button" href="/figures">Figures</a><br><br>
 <a class="button" href="/">Go Home</a>
